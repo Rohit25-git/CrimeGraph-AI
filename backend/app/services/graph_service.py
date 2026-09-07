@@ -222,7 +222,8 @@ class GraphService:
             return {"nodes": [], "edges": []}
             
         # Extract ego network
-        sub_nodes = nx.single_source_shortest_path_length(G, entity_id, cut_off=depth).keys()
+        distances = nx.single_source_shortest_path_length(G, entity_id)
+        sub_nodes = [node for node, distance in distances.items() if distance <= depth]
         subgraph = G.subgraph(sub_nodes)
         
         nodes = []
@@ -596,3 +597,4 @@ class GraphService:
             )
             
         return G
+

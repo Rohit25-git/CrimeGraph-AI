@@ -57,13 +57,60 @@ class AIAssistantService:
         question_lower = question.lower()
 
         # ------------------------------------------------------------
-        # Intent: Path discovery between two entities
+        # Intent: Relationship / Path discovery between two entities
         # ------------------------------------------------------------
 
         if len(entity_matches) >= 2:
 
             src = entity_matches[0]
             tgt = entity_matches[1]
+
+            # --------------------------------------------------------
+            # Direct relationship lookup
+            # --------------------------------------------------------
+
+            direct_relationships = (
+                db.query(Relationship)
+                .filter(
+                    (
+                        (Relationship.source_entity_id == src) &
+                        (Relationship.target_entity_id == tgt)
+                    )
+                    |
+                    (
+                        (Relationship.source_entity_id == tgt) &
+                        (Relationship.target_entity_id == src)
+                    )
+                )
+                .order_by(Relationship.timestamp.asc())
+                .all()
+            )
+
+            facts["direct_relationship_analysis"] = {
+                "source": src,
+                "target": tgt,
+                "relationship_found": len(direct_relationships) > 0,
+                "relationships": [
+                    {
+                        "relationship_id": r.id,
+                        "source": r.source_entity_id,
+                        "target": r.target_entity_id,
+                        "type": r.type,
+                        "timestamp": (
+                            r.timestamp.isoformat()
+                            if r.timestamp
+                            else "N/A"
+                        ),
+                        "confidence": r.confidence,
+                        "metadata": r.metadata_json
+                    }
+                    for r in direct_relationships
+                ]
+            }
+
+            # --------------------------------------------------------
+            # Shortest path analysis
+            # --------------------------------------------------------
 
             path = GraphService.get_shortest_path(
                 db,
@@ -317,6 +364,22 @@ class AIAssistantService:
 
             "\n\n"
 
+            "IMPORTANT RELATIONSHIP RULE: "
+
+            "If 'direct_relationship_analysis' contains "
+            "'relationship_found': true, you MUST use those "
+            "relationship records when answering questions about "
+            "why or how two entities are connected. "
+
+            "State the recorded relationship type, direction, "
+            "timestamp, confidence, and metadata when relevant. "
+
+            "Do NOT invent the reason, purpose, content, or intent "
+            "behind a relationship unless the database explicitly "
+            "contains that information. "
+
+            "\n\n"
+
             "If sufficient evidence exists, structure the "
             "'answer' text using these exact sections:\n\n"
 
@@ -338,6 +401,10 @@ class AIAssistantService:
             "Cite sources in the answer using markdown brackets, "
             "matching the filename or evidence ID, for example "
             "[intel_report_01.txt] or [CDR-001]. "
+
+            "For database relationship records where no external "
+            "evidence filename exists, identify the relationship "
+            "ID as the database source. "
 
             "Never declare a person guilty. "
 
@@ -456,10 +523,34 @@ class AIAssistantService:
                         or not data["sources"]
                     ):
 
+                        relationship_sources = []
+
+                        direct_analysis = facts.get(
+                            "direct_relationship_analysis",
+                            {}
+                        )
+
+                        for relationship in direct_analysis.get(
+                            "relationships",
+                            []
+                        ):
+                            relationship_id = relationship.get(
+                                "relationship_id"
+                            )
+
+                            if relationship_id:
+                                relationship_sources.append(
+                                    f"Relationship {relationship_id}"
+                                )
+
                         data["sources"] = (
                             list(sources)
                             if sources
-                            else ["Database Records"]
+                            else (
+                                relationship_sources
+                                if relationship_sources
+                                else ["Database Records"]
+                            )
                         )
 
                     # ------------------------------------------------
@@ -471,17 +562,54 @@ class AIAssistantService:
                         or not data["evidence"]
                     ):
 
+                        relationship_evidence = []
+
+                        direct_analysis = facts.get(
+                            "direct_relationship_analysis",
+                            {}
+                        )
+
+                        for relationship in direct_analysis.get(
+                            "relationships",
+                            []
+                        ):
+                            relationship_evidence.append(
+                                {
+                                    "type": relationship.get(
+                                        "type",
+                                        "Relationship"
+                                    ),
+                                    "description": (
+                                        f"{relationship.get('source')} "
+                                        f"-> "
+                                        f"{relationship.get('target')} "
+                                        f"recorded as "
+                                        f"{relationship.get('type')} "
+                                        f"on "
+                                        f"{relationship.get('timestamp')} "
+                                        f"(confidence: "
+                                        f"{relationship.get('confidence')}). "
+                                        f"[Relationship "
+                                        f"{relationship.get('relationship_id')}]"
+                                    )
+                                }
+                            )
+
                         data["evidence"] = (
                             evidence_list
                             if evidence_list
-                            else [
-                                {
-                                    "type": "Graph",
-                                    "description": (
-                                        "Connection database records"
-                                    )
-                                }
-                            ]
+                            else (
+                                relationship_evidence
+                                if relationship_evidence
+                                else [
+                                    {
+                                        "type": "Graph",
+                                        "description": (
+                                            "Connection database records"
+                                        )
+                                    }
+                                ]
+                            )
                         )
 
                     # ------------------------------------------------
@@ -587,12 +715,130 @@ class AIAssistantService:
             else "General Network"
         )
 
+        # ------------------------------------------------------------
+        # Relationship-specific fallback
+        # ------------------------------------------------------------
+
+        direct_analysis = facts.get(
+            "direct_relationship_analysis",
+            {}
+        )
+
+        direct_relationships = direct_analysis.get(
+            "relationships",
+            []
+        )
+
+        if direct_relationships:
+
+            relationship_lines = []
+
+            for relationship in direct_relationships:
+
+                relationship_lines.append(
+                    (
+                        f"{relationship.get('source')} -> "
+                        f"{relationship.get('target')} "
+                        f"({relationship.get('type')}) "
+                        f"recorded on "
+                        f"{relationship.get('timestamp')} "
+                        f"with confidence "
+                        f"{relationship.get('confidence')}."
+                    )
+                )
+
+            relationship_text = " ".join(
+                relationship_lines
+            )
+
+            return {
+                "answer": (
+                    "FACTS\n"
+                    f"{relationship_text}\n\n"
+
+                    "ANALYTICAL OBSERVATIONS\n"
+                    "The database contains a direct recorded "
+                    "relationship between the requested entities.\n\n"
+
+                    "INTERPRETATION\n"
+                    "This relationship is a documented network "
+                    "connection and may serve as an investigative "
+                    "lead. The available record does not establish "
+                    "the purpose or intent of the relationship.\n\n"
+
+                    "LIMITATIONS\n"
+                    "The database record does not establish why "
+                    "the entities interacted or what occurred "
+                    "during the interaction.\n\n"
+
+                    "SOURCES\n"
+                    + " ".join(
+                        [
+                            f"[Relationship "
+                            f"{r.get('relationship_id')}]"
+                            for r in direct_relationships
+                        ]
+                    )
+                ),
+
+                "key_findings": [
+                    (
+                        f"{r.get('source')} -> "
+                        f"{r.get('target')}: "
+                        f"{r.get('type')}"
+                    )
+                    for r in direct_relationships
+                ],
+
+                "evidence": [
+                    {
+                        "type": r.get(
+                            "type",
+                            "Relationship"
+                        ),
+                        "description": (
+                            f"{r.get('source')} -> "
+                            f"{r.get('target')} "
+                            f"recorded as "
+                            f"{r.get('type')} "
+                            f"on "
+                            f"{r.get('timestamp')} "
+                            f"(confidence: "
+                            f"{r.get('confidence')}). "
+                            f"[Relationship "
+                            f"{r.get('relationship_id')}]"
+                        )
+                    }
+                    for r in direct_relationships
+                ],
+
+                "sources": [
+                    f"Relationship {r.get('relationship_id')}"
+                    for r in direct_relationships
+                ],
+
+                "confidence": "High",
+
+                "important_notes": (
+                    "The relationship is directly supported by "
+                    "the database. Its purpose or intent requires "
+                    "investigator review and additional evidence."
+                ),
+
+                "suggested_actions": suggested_actions
+            }
+
+        # ------------------------------------------------------------
+        # Generic fallback
+        # ------------------------------------------------------------
+
         return {
 
             "answer": (
                 "I analyzed the available network records around "
-                f"the target entity. {connection_count} direct "
-                "connections were found in the database. "
+                "the target entity. "
+                f"{connection_count} direct connections were found "
+                "in the database. "
                 "(Groq service is currently unavailable or slow, "
                 "so a structured database fallback answer is "
                 "being displayed.)"
@@ -664,3 +910,4 @@ class AIAssistantService:
             content = content[:-3]
 
         return content.strip()
+
