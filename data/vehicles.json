@@ -1,0 +1,362 @@
+[
+  {
+    "id": "V001",
+    "plate": "MH-01-AB-1234",
+    "type": "VEHICLE",
+    "properties": {
+      "model": "Toyota Fortuner",
+      "color": "Black"
+    }
+  },
+  {
+    "id": "V002",
+    "plate": "MH-02-CD-5678",
+    "type": "VEHICLE",
+    "properties": {
+      "model": "Honda City",
+      "color": "White"
+    }
+  },
+  {
+    "id": "V003",
+    "plate": "MH-14-HX-3227",
+    "type": "VEHICLE",
+    "properties": {
+      "model": "Kia Seltos",
+      "color": "White"
+    }
+  },
+  {
+    "id": "V004",
+    "plate": "MH-10-NN-1346",
+    "type": "VEHICLE",
+    "properties": {
+      "model": "Mahindra Thar",
+      "color": "Blue"
+    }
+  },
+  {
+    "id": "V005",
+    "plate": "MH-03-AI-5472",
+    "type": "VEHICLE",
+    "properties": {
+      "model": "Hyundai Creta",
+      "color": "Blue"
+    }
+  },
+  {
+    "id": "V006",
+    "plate": "MH-01-CK-4934",
+    "type": "VEHICLE",
+    "properties": {
+      "model": "Mahindra Thar",
+      "color": "Black"
+    }
+  },
+  {
+    "id": "V007",
+    "plate": "MH-02-XW-3193",
+    "type": "VEHICLE",
+    "properties": {
+      "model": "Kia Seltos",
+      "color": "Blue"
+    }
+  },
+  {
+    "id": "V008",
+    "plate": "MH-03-ZD-3959",
+    "type": "VEHICLE",
+    "properties": {
+      "model": "Kia Seltos",
+      "color": "White"
+    }
+  },
+  {
+    "id": "V009",
+    "plate": "MH-14-PJ-6556",
+    "type": "VEHICLE",
+    "properties": {
+      "model": "Toyota Innova",
+      "color": "White"
+    }
+  },
+  {
+    "id": "V010",
+    "plate": "MH-07-YJ-7063",
+    "type": "VEHICLE",
+    "properties": {
+      "model": "Toyota Innova",
+      "color": "Red"
+    }
+  },
+  {
+    "id": "V011",
+    "plate": "MH-14-YT-8178",
+    "type": "VEHICLE",
+    "properties": {
+      "model": "Toyota Innova",
+      "color": "Silver"
+    }
+  },
+  {
+    "id": "V012",
+    "plate": "MH-02-QF-7411",
+    "type": "VEHICLE",
+    "properties": {
+      "model": "Hyundai Creta",
+      "color": "White"
+    }
+  },
+  {
+    "id": "V013",
+    "plate": "MH-06-RF-7359",
+    "type": "VEHICLE",
+    "properties": {
+      "model": "Toyota Innova",
+      "color": "Black"
+    }
+  },
+  {
+    "id": "V014",
+    "plate": "MH-10-LU-6799",
+    "type": "VEHICLE",
+    "properties": {
+      "model": "Mahindra Thar",
+      "color": "Silver"
+    }
+  },
+  {
+    "id": "V015",
+    "plate": "MH-08-VU-8232",
+    "type": "VEHICLE",
+    "properties": {
+      "model": "Toyota Innova",
+      "color": "Blue"
+    }
+  },
+  {
+    "id": "V016",
+    "plate": "MH-05-RR-1312",
+    "type": "VEHICLE",
+    "properties": {
+      "model": "Hyundai Creta",
+      "color": "White"
+    }
+  },
+  {
+    "id": "V017",
+    "plate": "MH-11-PC-1452",
+    "type": "VEHICLE",
+    "properties": {
+      "model": "Hyundai Creta",
+      "color": "Red"
+    }
+  },
+  {
+    "id": "V018",
+    "plate": "MH-01-LC-7826",
+    "type": "VEHICLE",
+    "properties": {
+      "model": "Hyundai Creta",
+      "color": "Blue"
+    }
+  },
+  {
+    "id": "V019",
+    "plate": "MH-13-GD-7642",
+    "type": "VEHICLE",
+    "properties": {
+      "model": "Toyota Innova",
+      "color": "Silver"
+    }
+  },
+  {
+    "id": "V020",
+    "plate": "MH-12-ST-9651",
+    "type": "VEHICLE",
+    "properties": {
+      "model": "Maruti Swift",
+      "color": "Black"
+    }
+  },
+  {
+    "id": "V021",
+    "plate": "MH-12-TM-7016",
+    "type": "VEHICLE",
+    "properties": {
+      "model": "Mahindra Thar",
+      "color": "Black"
+    }
+  },
+  {
+    "id": "V022",
+    "plate": "MH-08-QU-1405",
+    "type": "VEHICLE",
+    "properties": {
+      "model": "Toyota Innova",
+      "color": "Black"
+    }
+  },
+  {
+    "id": "V023",
+    "plate": "MH-13-BQ-9868",
+    "type": "VEHICLE",
+    "properties": {
+      "model": "Maruti Swift",
+      "color": "Silver"
+    }
+  },
+  {
+    "id": "V024",
+    "plate": "MH-06-FS-5027",
+    "type": "VEHICLE",
+    "properties": {
+      "model": "Mahindra Thar",
+      "color": "Silver"
+    }
+  },
+  {
+    "id": "V025",
+    "plate": "MH-11-CN-3637",
+    "type": "VEHICLE",
+    "properties": {
+      "model": "Kia Seltos",
+      "color": "Silver"
+    }
+  },
+  {
+    "id": "V026",
+    "plate": "MH-13-FL-5614",
+    "type": "VEHICLE",
+    "properties": {
+      "model": "Tata Nexon",
+      "color": "Red"
+    }
+  },
+  {
+    "id": "V027",
+    "plate": "MH-05-EY-6242",
+    "type": "VEHICLE",
+    "properties": {
+      "model": "Toyota Innova",
+      "color": "Grey"
+    }
+  },
+  {
+    "id": "V028",
+    "plate": "MH-03-DC-2584",
+    "type": "VEHICLE",
+    "properties": {
+      "model": "Maruti Swift",
+      "color": "White"
+    }
+  },
+  {
+    "id": "V029",
+    "plate": "MH-06-HL-3653",
+    "type": "VEHICLE",
+    "properties": {
+      "model": "Toyota Innova",
+      "color": "Silver"
+    }
+  },
+  {
+    "id": "V030",
+    "plate": "MH-09-PD-2717",
+    "type": "VEHICLE",
+    "properties": {
+      "model": "Tata Nexon",
+      "color": "Blue"
+    }
+  },
+  {
+    "id": "V031",
+    "plate": "MH-10-WM-7179",
+    "type": "VEHICLE",
+    "properties": {
+      "model": "Maruti Swift",
+      "color": "White"
+    }
+  },
+  {
+    "id": "V032",
+    "plate": "MH-01-RP-7635",
+    "type": "VEHICLE",
+    "properties": {
+      "model": "Maruti Swift",
+      "color": "White"
+    }
+  },
+  {
+    "id": "V033",
+    "plate": "MH-11-CT-2247",
+    "type": "VEHICLE",
+    "properties": {
+      "model": "Hyundai Creta",
+      "color": "Silver"
+    }
+  },
+  {
+    "id": "V034",
+    "plate": "MH-04-EH-2396",
+    "type": "VEHICLE",
+    "properties": {
+      "model": "Maruti Swift",
+      "color": "Blue"
+    }
+  },
+  {
+    "id": "V035",
+    "plate": "MH-07-EG-1115",
+    "type": "VEHICLE",
+    "properties": {
+      "model": "Toyota Innova",
+      "color": "Red"
+    }
+  },
+  {
+    "id": "V036",
+    "plate": "MH-10-YR-6495",
+    "type": "VEHICLE",
+    "properties": {
+      "model": "Hyundai Creta",
+      "color": "Silver"
+    }
+  },
+  {
+    "id": "V037",
+    "plate": "MH-11-TZ-9126",
+    "type": "VEHICLE",
+    "properties": {
+      "model": "Toyota Innova",
+      "color": "Red"
+    }
+  },
+  {
+    "id": "V038",
+    "plate": "MH-02-WV-2348",
+    "type": "VEHICLE",
+    "properties": {
+      "model": "Mahindra Thar",
+      "color": "Black"
+    }
+  },
+  {
+    "id": "V039",
+    "plate": "MH-14-CA-5287",
+    "type": "VEHICLE",
+    "properties": {
+      "model": "Toyota Innova",
+      "color": "Grey"
+    }
+  },
+  {
+    "id": "V040",
+    "plate": "MH-04-FJ-1037",
+    "type": "VEHICLE",
+    "properties": {
+      "model": "Toyota Innova",
+      "color": "Black"
+    }
+  }
+]

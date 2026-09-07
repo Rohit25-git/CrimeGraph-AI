@@ -1,0 +1,164 @@
+[
+  {
+    "id": "ORG001",
+    "name": "Mehta Exports Ltd",
+    "type": "ORGANIZATION",
+    "properties": {
+      "sector": "Export-Import",
+      "reg_no": "EXP-10928"
+    }
+  },
+  {
+    "id": "ORG002",
+    "name": "Sharma Logistics Solutions",
+    "type": "ORGANIZATION",
+    "properties": {
+      "sector": "Freight & Transport",
+      "reg_no": "LOG-58291"
+    }
+  },
+  {
+    "id": "ORG003",
+    "name": "Khan FinCorp",
+    "type": "ORGANIZATION",
+    "properties": {
+      "sector": "Wealth Management",
+      "reg_no": "FIN-29481"
+    }
+  },
+  {
+    "id": "ORG004",
+    "name": "Mehta Logistics",
+    "type": "ORGANIZATION",
+    "properties": {
+      "sector": "Freight Transport",
+      "reg_no": "REG-64270"
+    }
+  },
+  {
+    "id": "ORG005",
+    "name": "Dubey FinCorp",
+    "type": "ORGANIZATION",
+    "properties": {
+      "sector": "Financial Services",
+      "reg_no": "REG-23476"
+    }
+  },
+  {
+    "id": "ORG006",
+    "name": "Mishra Logistics",
+    "type": "ORGANIZATION",
+    "properties": {
+      "sector": "Financial Services",
+      "reg_no": "REG-65071"
+    }
+  },
+  {
+    "id": "ORG007",
+    "name": "Sen FinCorp",
+    "type": "ORGANIZATION",
+    "properties": {
+      "sector": "Shell Corporation",
+      "reg_no": "REG-73677"
+    }
+  },
+  {
+    "id": "ORG008",
+    "name": "Pathak Logistics",
+    "type": "ORGANIZATION",
+    "properties": {
+      "sector": "Financial Services",
+      "reg_no": "REG-19808"
+    }
+  },
+  {
+    "id": "ORG009",
+    "name": "Nair FinCorp",
+    "type": "ORGANIZATION",
+    "properties": {
+      "sector": "Shell Corporation",
+      "reg_no": "REG-19854"
+    }
+  },
+  {
+    "id": "ORG010",
+    "name": "Verma Logistics",
+    "type": "ORGANIZATION",
+    "properties": {
+      "sector": "Retail Distribution",
+      "reg_no": "REG-95103"
+    }
+  },
+  {
+    "id": "ORG011",
+    "name": "Sareen FinCorp",
+    "type": "ORGANIZATION",
+    "properties": {
+      "sector": "Freight Transport",
+      "reg_no": "REG-70397"
+    }
+  },
+  {
+    "id": "ORG012",
+    "name": "Gupta Logistics",
+    "type": "ORGANIZATION",
+    "properties": {
+      "sector": "Financial Services",
+      "reg_no": "REG-83995"
+    }
+  },
+  {
+    "id": "ORG013",
+    "name": "Das FinCorp",
+    "type": "ORGANIZATION",
+    "properties": {
+      "sector": "Freight Transport",
+      "reg_no": "REG-76777"
+    }
+  },
+  {
+    "id": "ORG014",
+    "name": "Kapoor Logistics",
+    "type": "ORGANIZATION",
+    "properties": {
+      "sector": "Freight Transport",
+      "reg_no": "REG-28873"
+    }
+  },
+  {
+    "id": "ORG015",
+    "name": "Mishra FinCorp",
+    "type": "ORGANIZATION",
+    "properties": {
+      "sector": "Shell Corporation",
+      "reg_no": "REG-11317"
+    }
+  },
+  {
+    "id": "ORG016",
+    "name": "Nair Logistics",
+    "type": "ORGANIZATION",
+    "properties": {
+      "sector": "Shell Corporation",
+      "reg_no": "REG-26777"
+    }
+  },
+  {
+    "id": "ORG017",
+    "name": "Rao FinCorp",
+    "type": "ORGANIZATION",
+    "properties": {
+      "sector": "Financial Services",
+      "reg_no": "REG-74495"
+    }
+  },
+  {
+    "id": "ORG018",
+    "name": "Oberoi Logistics",
+    "type": "ORGANIZATION",
+    "properties": {
+      "sector": "Shell Corporation",
+      "reg_no": "REG-33790"
+    }
+  }
+]

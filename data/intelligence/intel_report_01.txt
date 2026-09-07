@@ -1,0 +1,16 @@
+
+    INTELLIGENCE REPORT: OPERATION MONSOON
+    DATE: August 12, 2026
+    CLASSIFICATION: CONFIDENTIAL - INVESTIGATOR DECISION SUPPORT
+    
+    SUMMARY OF OBSERVATIONS:
+    Subject Arjun Mehta (P001) was observed entering Mehta Exports Ltd (ORG001) in Mumbai. 
+    Arjun later met Ravi Sharma (P002) at Bandra Safehouse B (LOC002) at 12 August 2026. 
+    Ravi Sharma (P002) later contacted Sameer Khan (P003) using phone number +91-98200-22222.
+    Sameer Khan (P003) is suspected of handling transaction transfers for Khan FinCorp (ORG003).
+    Arjun Mehta (P001) was seen near vehicle MH-01-AB-1234 (V001) parked near Port Trust Warehouse A (LOC001).
+    A transfer of funds was registered involving account ACC003 (held by Khan FinCorp) transferring INR 1,500,000 to Ravi Sharma.
+    
+    RECOMMENDATION:
+    Indicators require human review and further corroboration through CDR analysis and audit logs.
+    

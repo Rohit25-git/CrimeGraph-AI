@@ -1,0 +1,236 @@
+from pydantic import BaseModel, Field
+from typing import Optional, List, Dict, Any
+from datetime import datetime
+
+# --- Token Schemas ---
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+
+class TokenData(BaseModel):
+    username: Optional[str] = None
+    role: Optional[str] = None
+
+# --- User Schemas ---
+class UserBase(BaseModel):
+    username: str
+
+class UserCreate(UserBase):
+    password: str
+    role: Optional[str] = "VIEWER"
+
+class UserLogin(UserBase):
+    password: str
+
+class UserResponse(UserBase):
+    id: int
+    role: str
+    created_at: datetime
+
+    class Config:
+        from_attributes = True
+
+# --- Document Schemas ---
+class DocumentBase(BaseModel):
+    filename: str
+    file_type: str
+    source_type: Optional[str] = "GENERIC"
+
+class DocumentCreate(DocumentBase):
+    text_content: Optional[str] = None
+    status: Optional[str] = "UPLOADED"
+    confidence: Optional[float] = 1.0
+
+class DocumentResponse(DocumentBase):
+    id: int
+    status: str
+    confidence: float
+    created_at: datetime
+
+    class Config:
+        from_attributes = True
+
+# --- Entity Schemas ---
+class EntityBase(BaseModel):
+    id: str
+    type: str
+    display_name: str
+    source_type: Optional[str] = "GENERIC"
+    metadata_json: Optional[Dict[str, Any]] = Field(default_factory=dict)
+    confidence: Optional[float] = 1.0
+
+class EntityCreate(EntityBase):
+    source_document_id: Optional[int] = None
+
+class EntityResponse(EntityBase):
+    source_document_id: Optional[int] = None
+    created_at: datetime
+    updated_at: datetime
+
+    class Config:
+        from_attributes = True
+
+# --- Relationship Schemas ---
+class RelationshipBase(BaseModel):
+    source_entity_id: str
+    target_entity_id: str
+    type: str
+    source_type: Optional[str] = "GENERIC"
+    timestamp: Optional[datetime] = None
+    confidence: Optional[float] = 1.0
+    metadata_json: Optional[Dict[str, Any]] = Field(default_factory=dict)
+
+class RelationshipCreate(RelationshipBase):
+    id: Optional[str] = None # Can be generated if empty
+    source_document_id: Optional[int] = None
+
+class RelationshipResponse(RelationshipBase):
+    id: str
+    source_document_id: Optional[int] = None
+    created_at: datetime
+
+    class Config:
+        from_attributes = True
+
+# --- Event Schemas ---
+class EventBase(BaseModel):
+    title: str
+    description: Optional[str] = None
+    timestamp: datetime
+
+class EventCreate(EventBase):
+    source_document_id: Optional[int] = None
+
+class EventResponse(EventBase):
+    id: int
+    source_document_id: Optional[int] = None
+
+    class Config:
+        from_attributes = True
+
+# --- Alert Schemas ---
+class AlertBase(BaseModel):
+    severity: str
+    title: str
+    reason: str
+    evidence_json: List[Any] = Field(default_factory=list)
+    entity_id: Optional[str] = None
+
+class AlertCreate(AlertBase):
+    status: Optional[str] = "Requires Human Review"
+
+class AlertUpdate(BaseModel):
+    status: str
+
+class AlertResponse(AlertBase):
+    id: int
+    status: str
+    timestamp: datetime
+
+    class Config:
+        from_attributes = True
+
+# --- Evidence Schemas ---
+class EvidenceBase(BaseModel):
+    type: str
+    source_type: Optional[str] = "GENERIC"
+    description: str
+    source_document_id: Optional[int] = None
+    entity_id: Optional[str] = None
+    relationship_id: Optional[str] = None
+
+class EvidenceResponse(EvidenceBase):
+    id: int
+    created_at: datetime
+
+    class Config:
+        from_attributes = True
+
+# --- Audit Log Schemas ---
+class AuditLogResponse(BaseModel):
+    id: int
+    user_id: Optional[int] = None
+    action: str
+    resource: str
+    timestamp: datetime
+    result: str
+
+    class Config:
+        from_attributes = True
+
+# --- AI Assistant Schemas ---
+class AssistantRequest(BaseModel):
+    question: str
+    context_entity_id: Optional[str] = None
+
+class AssistantResponse(BaseModel):
+    answer: str
+    key_findings: List[str]
+    evidence: List[Dict[str, Any]]
+    sources: List[str]
+    confidence: str
+    important_notes: str
+
+# --- Report Schemas ---
+class ReportRequest(BaseModel):
+    investigation_name: str
+    selected_entity_ids: List[str]
+
+class ReportResponse(BaseModel):
+    report_id: str
+    investigation_name: str
+    generated_at: datetime
+    network_summary: Dict[str, Any]
+    metrics: Dict[str, Any]
+    entities: List[Dict[str, Any]]
+    relationships: List[Dict[str, Any]]
+    timeline: List[Dict[str, Any]]
+    anomalies: List[Dict[str, Any]]
+    evidence: List[Dict[str, Any]]
+    sources: List[Dict[str, Any]]
+
+# --- Investigation Schemas ---
+class InvestigationBase(BaseModel):
+    title: str
+    description: Optional[str] = None
+    status: Optional[str] = "Active"
+    priority: Optional[str] = "Medium"
+    entities_json: List[str] = Field(default_factory=list)
+    notes: Optional[str] = None
+
+class InvestigationCreate(InvestigationBase):
+    id: Optional[str] = None  # Autogenerated if null (e.g. INV-2026-001)
+
+class InvestigationUpdate(BaseModel):
+    title: Optional[str] = None
+    description: Optional[str] = None
+    status: Optional[str] = None
+    priority: Optional[str] = None
+    entities_json: Optional[List[str]] = None
+    notes: Optional[str] = None
+
+class InvestigationResponse(InvestigationBase):
+    id: str
+    created_by: str
+    created_date: datetime
+
+    class Config:
+        from_attributes = True
+
+# --- Entity Resolution Schemas ---
+class EntityResolutionResponse(BaseModel):
+    id: int
+    source_entity_id: str
+    source_display_name: str
+    target_entity_id: str
+    target_display_name: str
+    confidence: float
+    status: str
+    created_at: datetime
+
+    class Config:
+        from_attributes = True
+
+class EntityResolutionMergeRequest(BaseModel):
+    merge: bool # True to merge, False to reject
+

@@ -1,0 +1,362 @@
+[
+  {
+    "id": "LOC001",
+    "name": "Warehouse A (Port Trust)",
+    "type": "LOCATION",
+    "properties": {
+      "city": "Mumbai",
+      "coordinates": "18.95,72.84"
+    }
+  },
+  {
+    "id": "LOC002",
+    "name": "Safehouse B (Bandra)",
+    "type": "LOCATION",
+    "properties": {
+      "city": "Mumbai",
+      "coordinates": "19.05,72.83"
+    }
+  },
+  {
+    "id": "LOC003",
+    "name": "Customs Checkpoint",
+    "type": "LOCATION",
+    "properties": {
+      "city": "Nhava Sheva",
+      "coordinates": "18.90,72.95"
+    }
+  },
+  {
+    "id": "LOC004",
+    "name": "Location C (Warehouse )",
+    "type": "LOCATION",
+    "properties": {
+      "city": "Goa",
+      "coordinates": "19.0026,73.0618"
+    }
+  },
+  {
+    "id": "LOC005",
+    "name": "Location E (Parking )",
+    "type": "LOCATION",
+    "properties": {
+      "city": "Pune",
+      "coordinates": "18.9696,72.9287"
+    }
+  },
+  {
+    "id": "LOC006",
+    "name": "Location X (Apartment )",
+    "type": "LOCATION",
+    "properties": {
+      "city": "Mumbai",
+      "coordinates": "18.9445,72.8764"
+    }
+  },
+  {
+    "id": "LOC007",
+    "name": "Location V (Office )",
+    "type": "LOCATION",
+    "properties": {
+      "city": "Thane",
+      "coordinates": "19.0678,72.9778"
+    }
+  },
+  {
+    "id": "LOC008",
+    "name": "Location V (Terminal )",
+    "type": "LOCATION",
+    "properties": {
+      "city": "Thane",
+      "coordinates": "19.0371,73.0171"
+    }
+  },
+  {
+    "id": "LOC009",
+    "name": "Location O (Parking )",
+    "type": "LOCATION",
+    "properties": {
+      "city": "Delhi",
+      "coordinates": "19.2086,73.092"
+    }
+  },
+  {
+    "id": "LOC010",
+    "name": "Location S (Resort )",
+    "type": "LOCATION",
+    "properties": {
+      "city": "Thane",
+      "coordinates": "19.1807,73.0972"
+    }
+  },
+  {
+    "id": "LOC011",
+    "name": "Location I (Resort )",
+    "type": "LOCATION",
+    "properties": {
+      "city": "Delhi",
+      "coordinates": "19.2166,73.0337"
+    }
+  },
+  {
+    "id": "LOC012",
+    "name": "Location X (Office )",
+    "type": "LOCATION",
+    "properties": {
+      "city": "Navi Mumbai",
+      "coordinates": "19.2775,72.9757"
+    }
+  },
+  {
+    "id": "LOC013",
+    "name": "Location X (Terminal )",
+    "type": "LOCATION",
+    "properties": {
+      "city": "Navi Mumbai",
+      "coordinates": "18.8135,72.915"
+    }
+  },
+  {
+    "id": "LOC014",
+    "name": "Location R (Resort )",
+    "type": "LOCATION",
+    "properties": {
+      "city": "Pune",
+      "coordinates": "19.2434,72.9842"
+    }
+  },
+  {
+    "id": "LOC015",
+    "name": "Location K (Office )",
+    "type": "LOCATION",
+    "properties": {
+      "city": "Goa",
+      "coordinates": "19.2458,72.9106"
+    }
+  },
+  {
+    "id": "LOC016",
+    "name": "Location T (Terminal )",
+    "type": "LOCATION",
+    "properties": {
+      "city": "Pune",
+      "coordinates": "19.1965,72.8257"
+    }
+  },
+  {
+    "id": "LOC017",
+    "name": "Location B (Warehouse )",
+    "type": "LOCATION",
+    "properties": {
+      "city": "Pune",
+      "coordinates": "18.847,72.9182"
+    }
+  },
+  {
+    "id": "LOC018",
+    "name": "Location I (Warehouse )",
+    "type": "LOCATION",
+    "properties": {
+      "city": "Thane",
+      "coordinates": "18.9722,73.0744"
+    }
+  },
+  {
+    "id": "LOC019",
+    "name": "Location J (Terminal )",
+    "type": "LOCATION",
+    "properties": {
+      "city": "Delhi",
+      "coordinates": "19.1607,72.8102"
+    }
+  },
+  {
+    "id": "LOC020",
+    "name": "Location M (Resort )",
+    "type": "LOCATION",
+    "properties": {
+      "city": "Pune",
+      "coordinates": "19.2242,72.7502"
+    }
+  },
+  {
+    "id": "LOC021",
+    "name": "Location M (Terminal )",
+    "type": "LOCATION",
+    "properties": {
+      "city": "Goa",
+      "coordinates": "19.24,72.9297"
+    }
+  },
+  {
+    "id": "LOC022",
+    "name": "Location Z (Resort )",
+    "type": "LOCATION",
+    "properties": {
+      "city": "Goa",
+      "coordinates": "18.8826,72.8869"
+    }
+  },
+  {
+    "id": "LOC023",
+    "name": "Location C (Apartment )",
+    "type": "LOCATION",
+    "properties": {
+      "city": "Mumbai",
+      "coordinates": "18.9876,72.8103"
+    }
+  },
+  {
+    "id": "LOC024",
+    "name": "Location V (Apartment )",
+    "type": "LOCATION",
+    "properties": {
+      "city": "Thane",
+      "coordinates": "19.268,72.896"
+    }
+  },
+  {
+    "id": "LOC025",
+    "name": "Location V (Parking )",
+    "type": "LOCATION",
+    "properties": {
+      "city": "Pune",
+      "coordinates": "18.8523,73.0117"
+    }
+  },
+  {
+    "id": "LOC026",
+    "name": "Location G (Office )",
+    "type": "LOCATION",
+    "properties": {
+      "city": "Thane",
+      "coordinates": "18.9753,72.7172"
+    }
+  },
+  {
+    "id": "LOC027",
+    "name": "Location N (Resort )",
+    "type": "LOCATION",
+    "properties": {
+      "city": "Navi Mumbai",
+      "coordinates": "19.2908,72.9795"
+    }
+  },
+  {
+    "id": "LOC028",
+    "name": "Location O (Terminal )",
+    "type": "LOCATION",
+    "properties": {
+      "city": "Thane",
+      "coordinates": "19.1203,72.7421"
+    }
+  },
+  {
+    "id": "LOC029",
+    "name": "Location I (Apartment )",
+    "type": "LOCATION",
+    "properties": {
+      "city": "Pune",
+      "coordinates": "19.1616,72.9266"
+    }
+  },
+  {
+    "id": "LOC030",
+    "name": "Location R (Resort )",
+    "type": "LOCATION",
+    "properties": {
+      "city": "Pune",
+      "coordinates": "19.0339,73.0418"
+    }
+  },
+  {
+    "id": "LOC031",
+    "name": "Location U (Warehouse )",
+    "type": "LOCATION",
+    "properties": {
+      "city": "Pune",
+      "coordinates": "19.0761,73.0456"
+    }
+  },
+  {
+    "id": "LOC032",
+    "name": "Location L (Warehouse )",
+    "type": "LOCATION",
+    "properties": {
+      "city": "Delhi",
+      "coordinates": "19.2603,72.8858"
+    }
+  },
+  {
+    "id": "LOC033",
+    "name": "Location R (Apartment )",
+    "type": "LOCATION",
+    "properties": {
+      "city": "Navi Mumbai",
+      "coordinates": "18.9326,72.7859"
+    }
+  },
+  {
+    "id": "LOC034",
+    "name": "Location Q (Office )",
+    "type": "LOCATION",
+    "properties": {
+      "city": "Goa",
+      "coordinates": "18.9436,72.7944"
+    }
+  },
+  {
+    "id": "LOC035",
+    "name": "Location Z (Resort )",
+    "type": "LOCATION",
+    "properties": {
+      "city": "Delhi",
+      "coordinates": "18.9351,72.8723"
+    }
+  },
+  {
+    "id": "LOC036",
+    "name": "Location P (Terminal )",
+    "type": "LOCATION",
+    "properties": {
+      "city": "Navi Mumbai",
+      "coordinates": "19.2078,72.9834"
+    }
+  },
+  {
+    "id": "LOC037",
+    "name": "Location P (Office )",
+    "type": "LOCATION",
+    "properties": {
+      "city": "Mumbai",
+      "coordinates": "19.268,73.0117"
+    }
+  },
+  {
+    "id": "LOC038",
+    "name": "Location U (Parking )",
+    "type": "LOCATION",
+    "properties": {
+      "city": "Navi Mumbai",
+      "coordinates": "18.866,72.7429"
+    }
+  },
+  {
+    "id": "LOC039",
+    "name": "Location I (Resort )",
+    "type": "LOCATION",
+    "properties": {
+      "city": "Delhi",
+      "coordinates": "18.9714,72.9929"
+    }
+  },
+  {
+    "id": "LOC040",
+    "name": "Location K (Resort )",
+    "type": "LOCATION",
+    "properties": {
+      "city": "Pune",
+      "coordinates": "19.2265,72.8858"
+    }
+  }
+]
