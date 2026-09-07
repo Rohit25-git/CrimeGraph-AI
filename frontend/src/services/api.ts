@@ -1,7 +1,8 @@
 import axios from 'axios';
 
-// Set base URL. When running Vite dev server with proxy, this points to Vite dev server domain
-const API_URL = '';
+// Use Render backend URL in production.
+// Keep empty locally so Vite's proxy handles /api and /ml requests.
+const API_URL = import.meta.env.VITE_API_BASE_URL || '';
 
 const api = axios.create({
   baseURL: API_URL,
