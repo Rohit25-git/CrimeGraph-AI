@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { mlAPI } from "./services/api";
 
 interface RiskEntity {
   entity_id: string;
@@ -29,17 +30,7 @@ export default function MLRiskPanel() {
       setLoading(true);
       setError(null);
 
-      const response = await fetch("/api/ml/risk");
-      let res = response;
-      if (!res.ok) {
-        res = await fetch("/ml/risk");
-      }
-
-      if (!res.ok) {
-        throw new Error(`ML API returned ${res.status}`);
-      }
-
-      const result: RiskResponse = await res.json();
+      const result: RiskResponse = await mlAPI.getRiskScores();
       setData(result);
     } catch (err) {
       console.error("Failed to load trained ML results:", err);
