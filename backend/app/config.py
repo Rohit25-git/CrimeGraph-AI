@@ -19,7 +19,7 @@ class Settings(BaseSettings):
     GROQ_MODEL: str = os.getenv("GROQ_MODEL", "qwen-2.5-32b")
     GROQ_API_URL: str = "https://api.groq.com/openai/v1/chat/completions"
     
-    JWT_SECRET: str = "8f5b8772a8c3d97cfde904c0cfb63892c90f5c1d683679c13568a1f81d113cfa"
+    JWT_SECRET: str = os.getenv("JWT_SECRET", "change-me-in-production")
     JWT_ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 1440
 
